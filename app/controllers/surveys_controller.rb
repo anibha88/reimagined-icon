@@ -30,7 +30,7 @@ class SurveysController < ApplicationController
 
   def search
     org = params[:org]
-    @orgPlan = "WIPRO/org.png"
+    @orgPlan = "index.png"
   end
 
   def searchResults
@@ -56,7 +56,7 @@ class SurveysController < ApplicationController
       @ipms_1_floors = 0
       @ipms_1_floors = Floor.where(tower_id: Tower.where(name: tower).pluck(:id)).order(name: :asc).pluck(:name)
       @ipms_1_floors.each do |flr|
-        str = "i1.png"
+        str = "ipms1.png"
         # str = "#{@organisation}"+"/"+unit+"/"+"#{@organisation} #{unit} T-#{tower.scan(/\d+/).last} #{flr} IPMS-1.png"
         @ipms1_floor_imgs.push(str)
       end
@@ -101,7 +101,7 @@ class SurveysController < ApplicationController
 
       @ipms2_floor_imgs = []
       @ipms_2_floors.each do |flr|
-        str = "i2.png"
+        str = "ipms2.png"
         @ipms2_floor_imgs.push(str)
       end
 
@@ -240,7 +240,7 @@ class SurveysController < ApplicationController
 
       @ipms3_floor_imgs = []
       @ipms_3_floors.each do |flr|
-        str = "i3.png"
+        str = "ipms3.png"
         @ipms3_floor_imgs.push(str)
       end
 
