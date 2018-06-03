@@ -1,0 +1,841 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:100,300";
+@import "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+@font-face {
+  font-family: "ProximaNovaSoftW03-Semibold";
+  src: url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.eot");
+  src: url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.woff") format("woff"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.svg#ProximaNovaSoftW03-Semibold") format("svg");
+}
+body {
+  width: 100%;
+  min-height: 500px;
+  margin: 3em auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7cac9+0,92a8d1+100 */
+  background: #f7cac9;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f7cac9 0%, #92a8d1 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f7cac9 0%, #92a8d1 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f7cac9 0%, #92a8d1 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* IE6-9 fallback on horizontal gradient */
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 50px;
+  font-family: ProximaNovaSoftW03-Semibold;
+  letter-spacing: 0px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.02), 2px 2px rgba(0, 0, 0, 0.02), 3px 3px rgba(0, 0, 0, 0.02), 4px 4px rgba(0, 0, 0, 0.02), 5px 5px rgba(0, 0, 0, 0.02), 6px 6px rgba(0, 0, 0, 0.02), 7px 7px rgba(0, 0, 0, 0.02);
+}
+h1 i {
+  position: relative;
+  font-size: 70px;
+}
+
+p {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 2em;
+  line-height: 30px;
+}
+p img {
+  position: relative;
+  top: 8px;
+  right: 10px;
+}
+
+.aoyue-select {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 330px;
+  height: 100%;
+  border-bottom: 0px;
+  border-radius: 3px;
+  font-size: 12px;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+}
+.aoyue-select:not(:hover) > i.toggle.icon-arrow-down {
+  display: block !important;
+}
+.aoyue-select:not(:hover) > i.toggle.icon-arrow-up {
+  display: none !important;
+}
+.aoyue-select:not(:hover) label.option > input:not(:checked) ~ span.title {
+  display: none !important;
+}
+.aoyue-select > i.toggle {
+  position: absolute;
+  z-index: 4;
+  right: 1.5em;
+  top: 1.6em;
+  color: #ccc;
+}
+.aoyue-select .title,
+.aoyue-select .placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 2em;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.aoyue-select > input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+.aoyue-select > input:checked ~ i.toggle.icon-arrow-down {
+  display: none;
+}
+.aoyue-select > input:checked ~ i.toggle.icon-arrow-up {
+  display: block;
+}
+.aoyue-select > input:checked div.options label.option .title {
+  display: none !important;
+}
+.aoyue-select > input:not(:checked) {
+  z-index: 4;
+}
+.aoyue-select > input:not(:checked) ~ label.option > span.title {
+  display: none;
+}
+.aoyue-select > input:not(:checked) ~ i.toggle.icon-arrow-up {
+  display: none;
+}
+.aoyue-select > input:not(:checked) ~ i.toggle.icon-arrow-down {
+  display: block;
+}
+.aoyue-select > input:disabled {
+  cursor: no-drop;
+}
+.aoyue-select > span.placeholder {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  color: #999;
+  border-top: 0px;
+}
+.aoyue-select label.option {
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  transition: all 1s ease-out;
+}
+.aoyue-select label.option span.title {
+  position: relative;
+  z-index: 2;
+  transition: background .3s ease-out;
+}
+.aoyue-select label.option span.title i.icon {
+  padding-right: 8px;
+  color: #92a8d1;
+}
+.aoyue-select label.option span.title:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.aoyue-select label.option input {
+  display: none;
+}
+.aoyue-select label.option input:checked ~ span.title {
+  position: absolute;
+  display: block;
+  z-index: 3;
+  top: 0px;
+  font-size: 12px;
+  background: #fff;
+  border-top: 0px;
+  box-shadow: none;
+  color: inherit;
+  width: 100%;
+}
+.aoyue-select label.option input:disabled ~ span.title {
+  background: #f9f9f9 !important;
+  color: #aaa;
+}
+.aoyue-select label.option input:disabled ~ span.title:hover {
+  color: #aaa;
+  background: none;
+  cursor: no-drop;
+}
+
+.aoyue-select2 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 330px;
+  height: 100%;
+  border-bottom: 0px;
+  border-radius: 3px;
+  font-size: 12px;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+}
+.aoyue-select2 i.toggle {
+  position: absolute;
+  z-index: 4;
+  right: 1.5em;
+  top: 1.6em;
+  color: #ccc;
+}
+.aoyue-select2 .title,
+.aoyue-select2 .placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 2em;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.aoyue-select2 > label > input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+.aoyue-select2 > label > input:checked {
+  z-index: 2;
+}
+.aoyue-select2 > label > input:checked ~ i.toggle.icon-plus {
+  display: none;
+}
+.aoyue-select2 > label > input:checked ~ i.toggle.icon-minus {
+  display: block;
+}
+.aoyue-select2 > label > input:not(:checked) ~ i.toggle.icon-minus {
+  display: none;
+}
+.aoyue-select2 > label > input:not(:checked) ~ i.toggle.icon-plus {
+  display: block;
+}
+.aoyue-select2 > label > input:not(:checked) ~ label.option input:not(:checked) ~ .title {
+  display: none !important;
+}
+.aoyue-select2 > label > input:disabled {
+  cursor: no-drop;
+}
+.aoyue-select2 label > span.placeholder {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  color: #999;
+  border-top: 0px;
+}
+.aoyue-select2 label.option {
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  transition: all 1s ease-out;
+}
+.aoyue-select2 label.option span.title {
+  position: relative;
+  z-index: 2;
+  transition: background .3s ease-out;
+}
+.aoyue-select2 label.option span.title i.icon {
+  padding-right: 8px;
+  color: #92a8d1;
+}
+.aoyue-select2 label.option span.title:hover {
+  color: #fff;
+  background: rgba(146, 168, 209, 0.5);
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.aoyue-select2 label.option input {
+  display: none;
+}
+.aoyue-select2 label.option input:checked ~ span.title {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 0px;
+  font-size: 12px;
+  background: #fff;
+  border-top: 0px;
+  box-shadow: none;
+  color: inherit;
+  width: 100%;
+}
+.aoyue-select2 label.option input:disabled ~ span.title {
+  background: #f9f9f9 !important;
+  color: #aaa;
+}
+.aoyue-select2 label.option input:disabled ~ span.title:hover {
+  color: #aaa;
+  background: none;
+  cursor: no-drop;
+}
+@import "https://fonts.googleapis.com/css?family=Roboto:100,300";
+@import "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+@font-face {
+  font-family: "ProximaNovaSoftW03-Semibold";
+  src: url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.eot");
+  src: url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.woff") format("woff"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/251c35fe6eeec7ffa3d335357aabcbd0.svg#ProximaNovaSoftW03-Semibold") format("svg");
+}
+/* line 11, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+body {
+  width: 100%;
+  min-height: 500px;
+  margin: 3em auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7cac9+0,92a8d1+100 */
+  background: #c8cac9;
+  /*rgb(247, 202, 201);*/
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f7cac9 0%, #92a8d1 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f7cac9 0%, #92a8d1 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f7cac9 0%, #92a8d1 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* IE6-9 fallback on horizontal gradient */
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* line 30, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+h1 {
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 50px;
+  font-family: ProximaNovaSoftW03-Semibold;
+  letter-spacing: 0px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.02), 2px 2px rgba(0, 0, 0, 0.02), 3px 3px rgba(0, 0, 0, 0.02), 4px 4px rgba(0, 0, 0, 0.02), 5px 5px rgba(0, 0, 0, 0.02), 6px 6px rgba(0, 0, 0, 0.02), 7px 7px rgba(0, 0, 0, 0.02);
+}
+/* line 31, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+h1 i {
+  position: relative;
+  font-size: 70px;
+}
+
+/* line 71, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+p {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 2em;
+  line-height: 30px;
+}
+/* line 77, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+p img {
+  position: relative;
+  top: 8px;
+  right: 10px;
+}
+
+/* line 86, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 330px;
+  height: 100%;
+  border-bottom: 0px;
+  border-radius: 3px;
+  font-size: 12px;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+}
+/* line 98, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select:not(:hover) > i.toggle.icon-arrow-down {
+  display: block !important;
+}
+/* line 101, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select:not(:hover) > i.toggle.icon-arrow-up {
+  display: none !important;
+}
+/* line 105, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select:not(:hover) label.option > input:not(:checked) ~ span.title {
+  display: none !important;
+}
+/* line 110, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > i.toggle {
+  position: absolute;
+  z-index: 4;
+  right: 1.5em;
+  top: 1.6em;
+  color: #ccc;
+}
+/* line 117, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select .title,
+.aoyue-select .placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 2em;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+/* line 128, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+/* line 139, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:checked ~ i.toggle.icon-arrow-down {
+  display: none;
+}
+/* line 142, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:checked ~ i.toggle.icon-arrow-up {
+  display: block;
+}
+/* line 145, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:checked div.options label.option .title {
+  display: none !important;
+}
+/* line 149, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:not(:checked) {
+  z-index: 4;
+}
+/* line 152, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:not(:checked) ~ label.option > span.title {
+  display: none;
+}
+/* line 156, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:not(:checked) ~ i.toggle.icon-arrow-up {
+  display: none;
+}
+/* line 159, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:not(:checked) ~ i.toggle.icon-arrow-down {
+  display: block;
+}
+/* line 163, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > input:disabled {
+  cursor: no-drop;
+}
+/* line 167, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select > span.placeholder {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  color: #999;
+  border-top: 0px;
+}
+/* line 175, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option {
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  transition: all 1s ease-out;
+}
+/* line 181, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option span.title {
+  position: relative;
+  z-index: 2;
+  transition: background .3s ease-out;
+}
+/* line 185, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option span.title i.icon {
+  padding-right: 8px;
+  color: #92a8d1;
+}
+/* line 189, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option span.title:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+/* line 195, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option input {
+  display: none;
+}
+/* line 197, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option input:checked ~ span.title {
+  position: absolute;
+  display: block;
+  z-index: 3;
+  top: 0px;
+  font-size: 12px;
+  background: #fff;
+  border-top: 0px;
+  box-shadow: none;
+  color: inherit;
+  width: 100%;
+}
+/* line 210, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option input:disabled ~ span.title {
+  background: #f9f9f9 !important;
+  color: #aaa;
+}
+/* line 213, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select label.option input:disabled ~ span.title:hover {
+  color: #aaa;
+  background: none;
+  cursor: no-drop;
+}
+
+/* line 225, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 330px;
+  height: 100%;
+  border-bottom: 0px;
+  border-radius: 3px;
+  font-size: 12px;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+}
+/* line 236, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 i.toggle {
+  position: absolute;
+  z-index: 4;
+  right: 1.5em;
+  top: 1.6em;
+  color: #ccc;
+}
+/* line 243, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 .title,
+.aoyue-select2 .placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 2em;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+/* line 254, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+/* line 264, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:checked {
+  z-index: 2;
+}
+/* line 266, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:checked ~ i.toggle.icon-plus {
+  display: none;
+}
+/* line 269, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:checked ~ i.toggle.icon-minus {
+  display: block;
+}
+/* line 274, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:not(:checked) ~ i.toggle.icon-minus {
+  display: none;
+}
+/* line 277, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:not(:checked) ~ i.toggle.icon-plus {
+  display: block;
+}
+/* line 280, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:not(:checked) ~ label.option input:not(:checked) ~ .title {
+  display: none !important;
+}
+/* line 284, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 > label > input:disabled {
+  cursor: no-drop;
+}
+/* line 288, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label > span.placeholder {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  color: #999;
+  border-top: 0px;
+}
+/* line 296, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option {
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  transition: all 1s ease-out;
+}
+/* line 302, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option span.title {
+  position: relative;
+  z-index: 2;
+  transition: background .3s ease-out;
+}
+/* line 306, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option span.title i.icon {
+  padding-right: 8px;
+  color: #92a8d1;
+}
+/* line 310, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option span.title:hover {
+  color: #fff;
+  background: rgba(146, 168, 209, 0.5);
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+/* line 316, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option input {
+  display: none;
+}
+/* line 318, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option input:checked ~ span.title {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 0px;
+  font-size: 12px;
+  background: #fff;
+  border-top: 0px;
+  box-shadow: none;
+  color: inherit;
+  width: 100%;
+}
+/* line 331, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option input:disabled ~ span.title {
+  background: #f9f9f9 !important;
+  color: #aaa;
+}
+/* line 334, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/dropdown.scss */
+.aoyue-select2 label.option input:disabled ~ span.title:hover {
+  color: #aaa;
+  background: none;
+  cursor: no-drop;
+}
+/* line 1, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /Users/nithinbharadhwaj/Desktop/my_projects/icon_ipms/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #1772FF;
+$color-form-highlight: #FFFFFF;
+
+*, *:before, *:after {
+	box-sizing:border-box;
+}
+
+body {
+	padding:$base-spacing-unit;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin:15;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin:10;
+}
+
+.container {
+	max-width: 1200px;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:20vh;
+}
+
+.table {
+	width:100%;
+	border:1px solid $color-form-highlight;
+}
+
+.table-header {
+	display:flex;
+	width:100%;
+	background:#000;
+	padding:($half-spacing-unit * 1.5) 0;
+}
+
+.table-row {
+	display:flex;
+	width:100%;
+	padding:($half-spacing-unit * 1.5) 0;
+
+	&:nth-of-type(odd) {
+		background:$color-form-highlight;
+	}
+}
+
+.table-data, .header__item {
+	flex: 2 2 20%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+.filter__link {
+	color:white;
+	text-decoration: none;
+	position:relative;
+	display:inline-block;
+	padding-left:$base-spacing-unit;
+	padding-right:$base-spacing-unit;
+
+	&::after {
+		content:'';
+		position:absolute;
+		right:-($half-spacing-unit * 1.5);
+		color:white;
+		font-size:$half-spacing-unit;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&.desc::after {
+		content: '(desc)';
+	}
+
+	&.asc::after {
+		content: '(asc)';
+	}
+
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
